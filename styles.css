@@ -1,0 +1,88 @@
+:root {
+  color-scheme: dark;
+  --menu-bg: rgba(2, 5, 8, 0.96);
+  --panel-bg: rgba(15, 19, 24, 0.95);
+  --border: rgba(197, 154, 88, 0.5);
+  --text: #d8d0bf;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body,
+#game-root {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #020304;
+  touch-action: none;
+  font-family: "Times New Roman", Georgia, serif;
+}
+
+#game {
+  width: 100%;
+  height: 100%;
+  display: block;
+  image-rendering: auto;
+}
+
+.menu-btn {
+  position: fixed;
+  z-index: 20;
+  top: max(10px, env(safe-area-inset-top));
+  font-size: 0.68rem;
+  padding: 0.35rem 0.55rem;
+  color: var(--text);
+  background: rgba(11, 13, 16, 0.4);
+  border: 1px solid rgba(205, 180, 129, 0.36);
+  border-radius: 10px;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(2px);
+}
+
+#character-btn { left: 10px; }
+#inventory-btn { right: 10px; }
+
+.fullscreen-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--menu-bg);
+  padding: 24px;
+}
+
+.fullscreen-menu.open {
+  display: flex;
+}
+
+.menu-card {
+  width: min(420px, 92vw);
+  border: 1px solid var(--border);
+  background: var(--panel-bg);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.menu-card h1 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.menu-card ul {
+  margin: 0 0 1rem 0;
+  padding-left: 1.2rem;
+}
+
+.close-menu {
+  border: 1px solid rgba(231, 195, 127, 0.55);
+  color: var(--text);
+  background: rgba(41, 32, 19, 0.6);
+  border-radius: 8px;
+  padding: 0.55rem 0.8rem;
+}
