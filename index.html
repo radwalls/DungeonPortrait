@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+  <title>Dungeon Portrait Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="game" aria-label="First-person dungeon prototype">
+    <div id="camera" class="camera">
+      <div class="vignette"></div>
+      <div class="corridor">
+        <div class="ceiling"></div>
+        <div class="tunnel-arch"></div>
+        <div class="walls"></div>
+        <div class="floor"></div>
+        <div class="fog"></div>
+      </div>
+      <div id="enemyLayer" class="enemy-layer" aria-live="polite"></div>
+      <div id="forkLayer" class="fork-layer" aria-hidden="true">
+        <div class="fork-path left"></div>
+        <div class="fork-path right"></div>
+      </div>
+      <div class="torch-glow left"></div>
+      <div class="torch-glow right"></div>
+      <div id="sword" class="sword" aria-hidden="true">
+        <div class="blade"></div>
+        <div class="guard"></div>
+        <div class="hilt"></div>
+      </div>
+    </div>
+
+    <div class="menu-buttons">
+      <button id="characterBtn" class="menu-btn" type="button">Character</button>
+      <button id="inventoryBtn" class="menu-btn" type="button">Inventory</button>
+    </div>
+
+    <div id="swipeHint" class="swipe-hint">Swipe up to surge • Swipe down to halt</div>
+
+    <div id="forkPrompt" class="fork-prompt" aria-hidden="true">
+      <button id="forkLeft" class="fork-choice" type="button">Left Route</button>
+      <button id="forkRight" class="fork-choice" type="button">Right Route</button>
+    </div>
+  </main>
+
+  <section id="characterMenu" class="fullscreen-menu" aria-hidden="true">
+    <div class="menu-shell">
+      <h1>Character</h1>
+      <p>Level 1 Delver</p>
+      <ul>
+        <li>Strength: 8</li>
+        <li>Agility: 7</li>
+        <li>Resolve: 9</li>
+      </ul>
+      <button class="close-menu" data-close>Return to Dungeon</button>
+    </div>
+  </section>
+
+  <section id="inventoryMenu" class="fullscreen-menu" aria-hidden="true">
+    <div class="menu-shell">
+      <h1>Inventory</h1>
+      <ul>
+        <li>Rustbound Longsword</li>
+        <li>Torch of Embers</li>
+        <li>3x Healing Herb</li>
+      </ul>
+      <button class="close-menu" data-close>Return to Dungeon</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
