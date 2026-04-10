@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Dungeon Portrait Prototype</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="game-root" aria-label="Dungeon game prototype">
+    <canvas id="game" aria-label="Gameplay view"></canvas>
+
+    <button id="character-btn" class="menu-btn" aria-label="Open character menu">Character</button>
+    <button id="inventory-btn" class="menu-btn" aria-label="Open inventory menu">Inventory</button>
+
+    <section id="character-menu" class="fullscreen-menu" aria-hidden="true">
+      <div class="menu-card">
+        <h1>Character</h1>
+        <p>Level 1 Prisoner Knight</p>
+        <p>Strength: 8</p>
+        <p>Resolve: 7</p>
+        <p>Awareness: 6</p>
+        <button class="close-menu" data-close="character-menu">Return to Dungeon</button>
+      </div>
+    </section>
+
+    <section id="inventory-menu" class="fullscreen-menu" aria-hidden="true">
+      <div class="menu-card">
+        <h1>Inventory</h1>
+        <ul>
+          <li>Rustbound Sword</li>
+          <li>Torch Ember Flask</li>
+          <li>Old Key Fragment</li>
+        </ul>
+        <button class="close-menu" data-close="inventory-menu">Return to Dungeon</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
