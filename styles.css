@@ -1,0 +1,183 @@
+:root {
+  --bg: #0f0b0a;
+  --panel: #1f1613;
+  --accent: #cb8f32;
+  --text: #f5e7d0;
+  --danger: #d64933;
+  --good: #70b77e;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", system-ui, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #2f1f18 0%, var(--bg) 60%);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.game {
+  width: min(100vw, 500px);
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  padding: 14px;
+  gap: 12px;
+}
+
+.hud,
+.event-card,
+.controls {
+  background: color-mix(in srgb, var(--panel) 88%, #000 12%);
+  border: 1px solid #654125;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.hud {
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.hud__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.xp-wrap {
+  display: grid;
+  gap: 4px;
+  font-size: 0.8rem;
+}
+
+progress {
+  width: 100%;
+  height: 12px;
+}
+
+.view {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  min-height: 50vh;
+}
+
+.tunnel {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-radial-gradient(circle at 50% 45%, rgba(255, 186, 80, 0.12) 0 8px, transparent 8px 26px),
+    linear-gradient(to bottom, #3a2419, #130f0d 65%);
+  filter: contrast(1.08);
+  transition: transform 0.45s ease;
+}
+
+.event-card {
+  position: absolute;
+  inset: auto 8px 8px;
+  padding: 12px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+
+p {
+  margin: 0;
+  line-height: 1.35;
+}
+
+.choice-zone {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.choice-zone button,
+.controls button,
+.strike-btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 11px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff7ec;
+}
+
+.choice-zone button,
+.secondary {
+  background: #7b5538;
+}
+
+.primary {
+  background: var(--accent);
+  color: #2a1607;
+}
+
+.strike-btn {
+  margin-top: 10px;
+  background: var(--danger);
+  width: 100%;
+}
+
+.controls {
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.combat-zone {
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.timing-track {
+  margin-top: 6px;
+  position: relative;
+  height: 16px;
+  border-radius: 999px;
+  background: #503929;
+  overflow: hidden;
+}
+
+.timing-sweet {
+  position: absolute;
+  left: 42%;
+  width: 16%;
+  top: 0;
+  bottom: 0;
+  background: var(--good);
+  opacity: 0.8;
+}
+
+.timing-marker {
+  position: absolute;
+  width: 10px;
+  top: -2px;
+  bottom: -2px;
+  background: #fefefe;
+  border-radius: 4px;
+  transform: translateX(0);
+}
+
+.flash {
+  animation: flash 300ms ease;
+}
+
+@keyframes flash {
+  from { filter: brightness(1.7); }
+  to { filter: brightness(1); }
+}
