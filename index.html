@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Dungeon Portrait</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud">
+        <div class="hud-row">
+          <span>Depth</span>
+          <strong id="depth">1</strong>
+        </div>
+        <div class="hud-row">
+          <span>HP</span>
+          <strong id="hp">100</strong>
+        </div>
+        <div class="hud-row">
+          <span>Stamina</span>
+          <strong id="stamina">100</strong>
+        </div>
+      </header>
+
+      <section class="view" id="view">
+        <div id="sceneTitle" class="scene-title">The Descent Begins</div>
+        <div id="sceneText" class="scene-text">Swipe up to push deeper into the dungeon.</div>
+
+        <div id="combatPanel" class="combat hidden">
+          <div class="enemy-name" id="enemyName">Skeleton</div>
+          <div class="bars">
+            <div class="bar-wrap">
+              <label>Enemy</label>
+              <div class="bar"><div id="enemyHpBar" class="bar-fill enemy"></div></div>
+            </div>
+            <div class="bar-wrap">
+              <label>Strike Timing</label>
+              <div class="timing-track">
+                <div id="timingZone" class="timing-zone"></div>
+                <div id="timingCursor" class="timing-cursor"></div>
+              </div>
+            </div>
+          </div>
+          <button id="strikeBtn" class="btn strike">Tap to Strike</button>
+        </div>
+
+        <div id="choicePanel" class="choices hidden"></div>
+      </section>
+
+      <footer class="controls">
+        <button id="forwardBtn" class="btn primary">Descend</button>
+        <button id="restartBtn" class="btn secondary hidden">Start New Run</button>
+      </footer>
+
+      <section class="meta">
+        <div>Gold: <strong id="gold">0</strong></div>
+        <div>Best Depth: <strong id="bestDepth">1</strong></div>
+        <div>Unlocked Gear: <strong id="gear">Rusty Dagger</strong></div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
