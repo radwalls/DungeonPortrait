@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Dungeon Portrait</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <header class="topbar">
+        <h1>Dungeon Portrait</h1>
+        <div class="depth">Depth: <span id="depth">1</span></div>
+      </header>
+
+      <section id="view" class="view scene-corridor" aria-label="Dungeon scene">
+        <div class="overlay vignette"></div>
+        <div class="overlay pulse" id="pulse"></div>
+
+        <div class="enemy" id="enemy" hidden>
+          <div class="enemy-core"></div>
+          <div class="enemy-name" id="enemyName"></div>
+          <div class="enemy-health-wrap">
+            <div class="enemy-health" id="enemyHealth"></div>
+          </div>
+        </div>
+
+        <div class="event-panel" id="eventPanel" hidden>
+          <h2 id="eventTitle"></h2>
+          <p id="eventText"></p>
+          <div class="choices" id="choices"></div>
+        </div>
+      </section>
+
+      <section class="hud">
+        <div class="bar-wrap">
+          <label>HP</label>
+          <div class="bar"><div id="hpBar" class="bar-fill hp"></div></div>
+          <span id="hpText"></span>
+        </div>
+        <div class="bar-wrap">
+          <label>Stamina</label>
+          <div class="bar"><div id="staminaBar" class="bar-fill stamina"></div></div>
+          <span id="staminaText"></span>
+        </div>
+      </section>
+
+      <section class="inventory">
+        <div>Gold: <span id="gold">0</span></div>
+        <div>Gear: <span id="gear">Rusty Blade</span></div>
+        <div>Relic: <span id="relic">None</span></div>
+      </section>
+
+      <section class="controls">
+        <button id="tapStrike" class="action">Tap to Strike</button>
+        <p class="hint">Swipe up to descend • Swipe left/right to dodge trap choices</p>
+        <p id="log" class="log">You stand at the dungeon entrance.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
