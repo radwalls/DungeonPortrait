@@ -1,0 +1,171 @@
+:root {
+  color-scheme: dark;
+  --bg: #101014;
+  --panel: #1b1a22;
+  --accent: #d9b26f;
+  --danger: #d45a5a;
+  --safe: #5abf7d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #262236 0%, var(--bg) 65%);
+  color: #f1f0f4;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  width: min(460px, 100vw);
+  min-height: 100dvh;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.top-bar,
+.hud,
+.upgrades,
+.footer,
+.viewport {
+  background: color-mix(in srgb, var(--panel), #000 20%);
+  border: 1px solid #3a3349;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.top-bar h1 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #cfc7e0;
+}
+
+.viewport {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 45dvh;
+  touch-action: none;
+}
+
+.event-title {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.event-text {
+  line-height: 1.45;
+  color: #ddd6ee;
+}
+
+.choice-panel {
+  display: grid;
+  gap: 8px;
+}
+
+.choice-btn,
+.new-run,
+.upgrade-btn,
+.strike-btn {
+  background: #2a2638;
+  color: #f0ecf8;
+  border: 1px solid #4b4560;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 0.95rem;
+}
+
+.choice-btn:active,
+.new-run:active,
+.upgrade-btn:active,
+.strike-btn:active {
+  transform: scale(0.98);
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.upgrades h2 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+.upgrade-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+#statusLine {
+  font-size: 0.8rem;
+  color: #c2bad7;
+  text-align: right;
+}
+
+.hidden {
+  display: none;
+}
+
+.combat-panel {
+  display: grid;
+  gap: 8px;
+}
+
+.enemy-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timing-track {
+  width: 100%;
+  height: 20px;
+  border-radius: 999px;
+  background: #2b2740;
+  position: relative;
+  overflow: hidden;
+}
+
+.timing-zone {
+  position: absolute;
+  left: 43%;
+  width: 14%;
+  top: 0;
+  bottom: 0;
+  background: rgba(217, 178, 111, 0.4);
+}
+
+.timing-cursor {
+  position: absolute;
+  width: 3%;
+  top: 0;
+  bottom: 0;
+  background: var(--safe);
+}
+
+.low-hp {
+  color: var(--danger);
+}

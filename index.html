@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Dungeon Descent: Portrait Crawler</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="app">
+      <header class="top-bar">
+        <h1>Dungeon Descent</h1>
+        <div class="meta">
+          <span id="depth">Depth: 0</span>
+          <span id="coins">Coins: 0</span>
+        </div>
+      </header>
+
+      <section id="viewport" class="viewport">
+        <div id="eventTitle" class="event-title">Swipe up to descend</div>
+        <p id="eventText" class="event-text">
+          Enter the cursed halls. Every step deeper brings greater treasure and deadlier danger.
+        </p>
+
+        <div id="choicePanel" class="choice-panel hidden"></div>
+
+        <div id="combatPanel" class="combat-panel hidden">
+          <div class="enemy-row">
+            <span id="enemyName">Skeleton</span>
+            <span id="enemyHp">HP: 0</span>
+          </div>
+          <div id="timingTrack" class="timing-track">
+            <div id="timingZone" class="timing-zone"></div>
+            <div id="timingCursor" class="timing-cursor"></div>
+          </div>
+          <button id="strikeBtn" class="strike-btn">Strike</button>
+          <small>Tap when the marker crosses the golden zone.</small>
+        </div>
+      </section>
+
+      <section class="hud">
+        <div>HP <span id="hpValue">100</span></div>
+        <div>Attack <span id="atkValue">10</span></div>
+        <div>Armor <span id="armorValue">0</span></div>
+      </section>
+
+      <section class="upgrades">
+        <h2>Camp Upgrades</h2>
+        <div class="upgrade-grid">
+          <button data-upgrade="blade" class="upgrade-btn">Sharper Blade (+2 ATK) <span id="bladeLvl">Lv 0</span></button>
+          <button data-upgrade="mail" class="upgrade-btn">Reinforced Mail (+2 ARM) <span id="mailLvl">Lv 0</span></button>
+          <button data-upgrade="vigor" class="upgrade-btn">Vigor Training (+10 HP) <span id="vigorLvl">Lv 0</span></button>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <button id="newRunBtn" class="new-run">Start New Run</button>
+        <span id="statusLine">Awaiting descent...</span>
+      </footer>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
