@@ -1,0 +1,106 @@
+:root {
+  color-scheme: dark;
+  --ui-bg: rgba(10, 10, 14, 0.62);
+  --ui-border: rgba(204, 170, 120, 0.45);
+  --text: #e6dfd2;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background: #000;
+  overflow: hidden;
+  touch-action: none;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+#app {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 50% 35%, #171316 0%, #060506 80%);
+}
+
+#gameCanvas {
+  width: min(100vw, calc(100vh * 0.56));
+  height: min(100vh, calc(100vw * 1.78));
+  max-height: 100vh;
+  max-width: 100vw;
+  background: #07070a;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.menu-btn {
+  position: absolute;
+  top: max(8px, env(safe-area-inset-top));
+  z-index: 3;
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  background: var(--ui-bg);
+  border: 1px solid var(--ui-border);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+}
+
+#characterBtn {
+  left: max(10px, env(safe-area-inset-left));
+}
+
+#inventoryBtn {
+  right: max(10px, env(safe-area-inset-right));
+}
+
+.menu-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 15%, rgba(28, 24, 30, 0.96) 0%, rgba(7, 6, 10, 0.98) 80%);
+  color: var(--text);
+}
+
+.menu-screen.hidden {
+  display: none;
+}
+
+.menu-content {
+  width: min(90%, 420px);
+  border: 1px solid rgba(194, 164, 118, 0.48);
+  border-radius: 16px;
+  padding: 1.1rem 1rem;
+  background: rgba(12, 11, 16, 0.9);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.menu-content h1 {
+  margin: 0 0 0.7rem;
+}
+
+.menu-content p,
+.menu-content li {
+  opacity: 0.92;
+  line-height: 1.35;
+}
+
+.close-btn {
+  margin-top: 0.8rem;
+  width: 100%;
+  border: 1px solid rgba(194, 164, 118, 0.6);
+  color: var(--text);
+  border-radius: 10px;
+  background: rgba(35, 27, 21, 0.68);
+  padding: 0.65rem;
+}

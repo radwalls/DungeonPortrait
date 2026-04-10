@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Dungeon Portrait Prototype</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main id="app" aria-label="Dungeon prototype game">
+      <canvas id="gameCanvas" aria-label="Dungeon first-person view"></canvas>
+
+      <button id="characterBtn" class="menu-btn" aria-label="Open character menu">Character</button>
+      <button id="inventoryBtn" class="menu-btn" aria-label="Open inventory menu">Inventory</button>
+
+      <section id="characterMenu" class="menu-screen hidden" aria-hidden="true">
+        <div class="menu-content">
+          <h1>Character</h1>
+          <p>Class: Warden of the Deep</p>
+          <p>Focus: Blade discipline, dungeon traversal, darkness adaptation.</p>
+          <ul>
+            <li>Vigor: 7</li>
+            <li>Resolve: 5</li>
+            <li>Precision: 6</li>
+          </ul>
+          <button class="close-btn" data-close="characterMenu">Return to Dungeon</button>
+        </div>
+      </section>
+
+      <section id="inventoryMenu" class="menu-screen hidden" aria-hidden="true">
+        <div class="menu-content">
+          <h1>Inventory</h1>
+          <p>Travel light. Keep the screen clean during gameplay.</p>
+          <ul>
+            <li>Iron Longsword</li>
+            <li>Tallow Torch</li>
+            <li>Old Key Fragment</li>
+          </ul>
+          <button class="close-btn" data-close="inventoryMenu">Return to Dungeon</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
